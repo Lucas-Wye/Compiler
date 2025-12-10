@@ -1,0 +1,4 @@
+docker run -it --rm -v .:/root/compiler maxxing/compiler-dev bash
+
+build/compiler -koopa hello.c -o hello.koopa
+
