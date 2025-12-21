@@ -1,7 +1,12 @@
+mod ast;
+
 use lalrpop_util::lalrpop_mod;
 use std::env::args;
 use std::fs::read_to_string;
 use std::io::Result;
+// use scopes::Scopes;
+
+use koopa::ir::{Program, Type};
 
 // 引用 lalrpop 生成的解析器
 // 因为我们刚刚创建了 sysy.lalrpop, 所以模块名是 sysy
@@ -23,6 +28,12 @@ fn main() -> Result<()> {
   let ast = sysy::CompUnitParser::new().parse(&input).unwrap();
 
   // 输出解析得到的 AST
-  println!("{}", ast);
+  println!("{:#?}", ast);
+
+  // 输出IR
+  // let mut program = Program::new();
+  // ast.generate(&mut program, &mut Scopes::new())?;
+  // println!("{}", program);
+
   Ok(())
 }
