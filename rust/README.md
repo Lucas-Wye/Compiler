@@ -1,3 +1,3 @@
 ```
-cargo run -- -koopa input.c -o output.koopa
+cargo run -- -koopa ../test/hello.c -o output.koopa
 ```
