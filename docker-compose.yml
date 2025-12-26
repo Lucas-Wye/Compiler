@@ -1,0 +1,9 @@
+services:
+  compiler-learning:
+    image: docker.1ms.run/maxxing/compiler-dev
+    volumes:
+      - .:/work
+    working_dir: /work
+    stdin_open: true
+    tty: true
+    command: bash
